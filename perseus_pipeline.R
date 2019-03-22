@@ -166,14 +166,6 @@ density(dat.a, bw = "nrd0", adjust = 1,
 boxplot(dat.a[ ,1:9],col = ("yellow"), las= 2, beside=T)
 #extracting outliers
 #N2<- boxplot.stats(dat.a[, 1])$out
-#N3<- boxplot.stats(dat.a[, 2])$out
-#N4<- boxplot.stats(dat.a[, 3])$out
-#SR1<- boxplot.stats(dat.a[, 4])$out
-#SR3<- boxplot.stats(dat.a[, 5])$out
-#SR4<- boxplot.stats(dat.a[, 6])$out
-#SS1<- boxplot.stats(dat.a[, 7])$out
-#SS2<- boxplot.stats(dat.a[, 8])$out
-#SS3<- boxplot.stats(dat.a[, 9])$out
 #outlier <- table(c(N2,N3,N4,SR1,SR3, SR4, SS1,SS2, SS3))
 
 ##Density Plots
@@ -244,13 +236,7 @@ CleanData2<- as.data.frame(CleanData2)
 #no package
 par(mfrow=c(2,3))
 plot(dat.a$N2, dat.a$N3, pch=2,col= "red")
-plot(dat.a$N2, dat.a$N4, pch=3,col= "red")
-plot(dat.a$N3, dat.a$N4, pch=4,col= "red")
 plot(dat.a$SR1, dat.a$SR3, pch=5,col= "blue")
-plot(dat.a$SR1, dat.a$SR4, pch=6,col= "blue")
-plot(dat.a$SR3, dat.a$SR4, pch=7,col= "blue")
-plot(dat.a$SS1, dat.a$SS2, pch=8,col= "green")
-plot(dat.a$SS1, dat.a$SS3, pch=9,col= "green")
 plot(dat.a$SS2, dat.a$SS3, pch=1,col= "green")
 dev.off()
 
@@ -360,11 +346,6 @@ pccomp <-
   
   plot(dat.pc, type = "barplot", las= 2, scale.=T)
 plot(dat.pc, type = "lines", las= 2, label=T)
-dat.df<- data.frame(dat.pc$x[ ,1:9]) # dataframe made of first 2 PCs
-range(dat.df[,"PC1"]) 
-range(dat.df[,"PC2"]) 
-range(dat.df[,"PC3"]) 
-range(dat.df[,"PC4"]) 
 
 #using factoextra
 library(factoextra)
